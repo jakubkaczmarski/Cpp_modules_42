@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:44:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 15:34:14 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:38:13 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void PhoneBook::display_contacts()
             {
                 std::cout <<  std::setw(1) << std::right << arr[i].first_name_[j];
             }
-            std::cout <<  std::setw(1) << "." << " | ";
+            std::cout <<  std::setw(1) << std::right << "." << " | ";
         }else
             std::cout << std::setw(10) << std::right << arr[i].first_name_ << " | " ;
         if(arr[i].last_name_.length() > 10)
@@ -57,9 +57,9 @@ void PhoneBook::display_contacts()
             {
                 std::cout <<  std::setw(1) << std::right << arr[i].last_name_[j];
             }
-            std::cout <<  std::setw(1) << "." << " | ";
+            std::cout <<  std::setw(1) << std::right << "." << " | ";
         }else{
-            std::cout << std::setw(10) << std::right <<  arr[i].last_name_ << "."<<" | ";
+            std::cout << std::setw(10) << std::right <<  arr[i].last_name_ <<" | ";
         }
         if(arr[i].nickname_.length() > 10)
         {
@@ -69,7 +69,7 @@ void PhoneBook::display_contacts()
             }
             std::cout << std::setw(1) << std::right <<  "." << " | " << std::endl;
         }else{
-            std::cout << std::setw(10)<< std::right << arr[i].nickname_ << std::endl;
+            std::cout << std::setw(10)<< std::right << arr[i].nickname_ << " | " << std::endl;
         }
     }  
 }
