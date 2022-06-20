@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:20:04 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 15:24:54 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:40:05 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int main()
 	PhoneBook phonebook;
 	while(1)
 	{
-		usleep(10000);
 		std::cout << "Enter one of the commands" << std::endl;    
 		std::cout << "ADD | SEARCH | EXIT" << std::endl;
 		std::cin >> input;

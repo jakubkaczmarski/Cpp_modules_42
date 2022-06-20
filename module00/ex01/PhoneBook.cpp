@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:44:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 17:38:13 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:43:10 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ void PhoneBook::display_index_cont()
     int index;
     if(contact_index_ == 0)
         return ;
-    std::cout << "Type the index of desired contact" << std::endl;
+    std::cout << "Type the index of desired contact :" << std::endl;
     std::cin >> index;
-    if(index > 8 || index < 0)
+    if(index >= 8 || index < 0)
     {
         std::cout << "Wrong index" << std::endl;
         return ;
@@ -92,4 +92,5 @@ void PhoneBook::display_index_cont()
     std::cout << "Nickname " <<  arr[index].nickname_ << std::endl;
     std::cout << "Phone number " <<  arr[index].phone_num_ << std::endl;
     std::cout << "Darkest secret " <<  arr[index].darkest_secret_ << std::endl;
+    std::cout << "_________________________________ " << std::endl;
 }
