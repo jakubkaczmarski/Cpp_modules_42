@@ -6,14 +6,16 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:29:46 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/19 23:36:13 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/20 13:50:11 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
+#include <iomanip>
 #include <iostream>
+
 class Contact
 {
     public:

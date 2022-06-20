@@ -6,14 +6,14 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:20:04 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 13:27:56 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/20 13:43:46 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 #include <array>
-
+#include <unistd.h>
 void	get_inp_for_arr(PhoneBook &phonebook)
 {
 	Contact contact;
@@ -21,6 +21,10 @@ void	get_inp_for_arr(PhoneBook &phonebook)
 	std::cout << "Adding contact" << std::endl;
 	std::cout << "First name" << std::endl;
 	std::cin >> contact.first_name_;
+	if(contact.first_name_.empty())
+	{
+		return  ;
+	}
 	std::cout << "Last name" << std::endl;
 	std::cin >> contact.last_name_;
 	std::cout << "Nickname" << std::endl;
@@ -38,16 +42,16 @@ int main()
 	PhoneBook phonebook;
 	while(1)
 	{
+		usleep(10000);
 		std::cout << "Enter one of the commands" << std::endl;    
 		std::cout << "ADD | SEARCH | EXIT" << std::endl;
 		std::cin >> input;
 		if(input.compare("ADD") == 0)
 		{
-			
-			// phonebook.add_contact()
+			get_inp_for_arr(phonebook);
 		}else if(input.compare("SEARCH") == 0)
 		{
-
+			phonebook.display_contacts();
 		}else if(input.compare("EXIT") == 0)
 		{
 			break;
