@@ -6,14 +6,13 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:20:04 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 19:16:56 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/20 19:18:59 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-#include <array>
-#include <unistd.h>
+
 void	get_inp_for_arr(PhoneBook &phonebook)
 {
 	Contact contact;
