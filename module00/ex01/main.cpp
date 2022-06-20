@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:20:04 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 17:53:00 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/20 19:16:56 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,12 @@ int main()
 	{
 		std::cout << "Enter one of the commands" << std::endl;    
 		std::cout << "ADD | SEARCH | EXIT" << std::endl;
-		std::cin >> input;
+		std::getline(std::cin, input);
+		if(!std::cin.good())
+		{
+			std::cout << "EOF sent program terminates" << std::endl;
+			break;
+		}
 		if(input.compare("ADD") == 0)
 		{
 			get_inp_for_arr(phonebook);
