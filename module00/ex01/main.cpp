@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:20:04 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 19:18:59 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/20 22:20:52 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,24 @@ void	get_inp_for_arr(PhoneBook &phonebook)
 	std::string input;
 	std::cout << "Adding contact" << std::endl;
 	std::cout << "First name" << std::endl;
-	std::cin >> contact.first_name_;
-	if(contact.first_name_.empty())
+	std::cin >> input;
+	if(input.empty())
 	{
 		return  ;
 	}
+	contact.set_name(input);
 	std::cout << "Last name" << std::endl;
-	std::cin >> contact.last_name_;
+	std::cin >> input;
+	contact.set_surname(input);
 	std::cout << "Nickname" << std::endl;
-	std::cin >> contact.nickname_;
+	std::cin >> input;
+	contact.set_nickname(input);
 	std::cout << "Phone num" << std::endl;
-	std::cin >> contact.phone_num_;
+	std::cin >> input;
+	contact.set_phone_num(input);
 	std::cout << "Darkest secret" << std::endl;
-	std::cin >> contact.darkest_secret_;
+	std::cin >> input;
+	contact.set_darkest_secret(input);
 	phonebook.add_contact(contact);
 }
 
