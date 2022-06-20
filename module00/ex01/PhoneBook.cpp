@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:44:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 17:43:10 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:51:54 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,13 @@ void PhoneBook::display_index_cont()
         return ;
     std::cout << "Type the index of desired contact :" << std::endl;
     std::cin >> index;
+     if (!std::cin)
+     {
+         std::cout << "Wrong index " << std::endl;
+         std::cin.clear(); 
+         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+         return ;
+     }
     if(index >= 8 || index < 0)
     {
         std::cout << "Wrong index" << std::endl;
