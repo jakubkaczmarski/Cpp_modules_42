@@ -6,9 +6,12 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 17:22:33 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/22 17:25:07 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/22 19:10:57 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 #include <string>
@@ -19,14 +22,8 @@ private:
 std::string name_;
 public:
     void announce();
-    Zombie(/* args */);
+    Zombie(std::string name);
     ~Zombie();
 };
 
-Zombie::Zombie(/* args */)
-{
-}
-
-Zombie::~Zombie()
-{
-}
+#endif
