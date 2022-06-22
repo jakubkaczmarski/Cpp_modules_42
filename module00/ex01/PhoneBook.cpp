@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:44:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 22:34:42 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:33:54 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,24 @@ void PhoneBook::add_contact(Contact contact)
         std::cout << "You haven't provided all the data requiret to create a contact" << std::endl;
         return ;
     }
-    if(contact_index_ == 7)
-    {
-        contact_index_ = 0;
-    }
     arr[contact_index_].set_name(contact.get_name());
     arr[contact_index_].set_surname(contact.get_surname());
     arr[contact_index_].set_nickname(contact.get_nickname());
     arr[contact_index_].set_phone_num(contact.get_phone_num());
     arr[contact_index_].set_darkest_secret(contact.get_darkest_secret());
+    if(contact_index_ == 7)
+    {
+        contact_index_ = 0;
+    }else{
+        contact_index_++; 
+    }
     std::cout << "Contact Added" << std::endl;
-    contact_index_++;    
 }
 
 void PhoneBook::display_contacts()
 {
     std::string temp;
-    if(contact_index_ == 0)
+    if(contact_index_ == 0 && arr[0].get_name().empty())
     {  
         std::cout << "No contacts to display" << std::endl;
         return ;
@@ -81,7 +82,7 @@ void PhoneBook::display_contacts()
 void PhoneBook::display_index_cont()
 {
     int index;
-    if(contact_index_ == 0)
+    if(contact_index_ == 0 && arr[0].get_name().empty())
         return ;
     std::cout << "Type the index of desired contact :" << std::endl;
     std::cin >> index;

@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:20:48 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/20 15:25:53 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:30:58 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class PhoneBook
         void    display_contacts();
         void    display_index_cont();
     private:
-    Contact arr[8];
+    Contact arr[9];
     int contact_index_;
 };
 
