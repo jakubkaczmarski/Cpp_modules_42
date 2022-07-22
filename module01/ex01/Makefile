@@ -6,7 +6,7 @@
 #    By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:22:54 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/23 01:34:36 by jkaczmar         ###   ########.fr        #
+#    Updated: 2022/07/23 01:40:05 by jkaczmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,18 @@ CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 SRCS	= 	main.cpp Zombie.cpp zombieHorde.cpp 
 
-OBJS := $(SRCs:.c=.o)
+OBJS := $(SRCS:.c=.o)
 
-
+%.o: %.c 
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): ${OBJS}
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+clean:
+	rm -f $(OBJs)
 
 fclean:
 	rm -f $(NAME)
