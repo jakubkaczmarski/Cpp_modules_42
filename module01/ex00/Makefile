@@ -6,7 +6,7 @@
 #    By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:22:54 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/06/22 19:06:55 by jkaczmar         ###   ########.fr        #
+#    Updated: 2022/07/23 01:41:39 by jkaczmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,20 @@ NAME	= zombie
 CC		= g++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRCS	= 	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
+SRCS	= 	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+
+OBJS := $(SRCS:.c=.o)
+
+%.o: %.c 
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME): ${OBJS}
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+clean:
+	rm -f $(OBJs)
 
 fclean:
 	rm -f $(NAME)
