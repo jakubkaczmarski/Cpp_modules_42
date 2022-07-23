@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 20:23:37 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/24 00:33:08 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/23 01:56:04 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon
     public:
     Weapon();
     Weapon(std::string type);
-    std::string getType();
+    const std::string &getType();
     void    setType(std::string type);
 };
 
