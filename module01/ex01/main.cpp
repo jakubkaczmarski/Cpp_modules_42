@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 17:22:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/23 16:36:08 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/23 10:44:32 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int main()
     for(int i = 0; i < 10; i++)
     {
         zombie_horde[i].announce();
-        zombie_horde[i].~Zombie();
     }
     delete[] zombie_horde;
 }

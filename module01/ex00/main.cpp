@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 17:22:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/06/23 16:36:32 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/23 10:42:41 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ void    randomChump(std::string name);
 
 int main()
 {
-    Zombie *zombie = newZombie("Marek");
+    Zombie *zombie = newZombie("Borys");
     zombie->announce();
-    zombie->~Zombie();
     delete(zombie);
     randomChump("Marek");
 }
