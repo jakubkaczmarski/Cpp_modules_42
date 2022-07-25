@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:12:52 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/26 01:11:12 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/26 01:22:10 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int Fixed::toInt() const
     return ((int)this->num_val_ >> this->num_of_frac_bits);
 }
 
-float Fixed::toFloat()
+float Fixed::toFloat() const
 {
     return (float)((float)this->num_val_ / (float)(1 << this->num_of_frac_bits));
 }
@@ -70,7 +70,7 @@ Fixed::Fixed(float num)
     printf("%f\n",this->toFloat());
     // printf("Zium %d \n", this->num_val_);
 }
-std::ostream& operator<<(std::ostream &os, Fixed& fix)
+std::ostream& operator<<(std::ostream &os, const Fixed& fix)
 {
     os << fix.toFloat();
     return os;
