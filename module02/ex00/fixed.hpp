@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:39 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/23 12:25:50 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/25 02:27:24 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ class Fixed
 {
     public:
     Fixed();
+    Fixed(int num);
+    Fixed(double num);
     Fixed(const Fixed &copy);
     Fixed &operator=(const Fixed &other);
     ~Fixed();
     int     getRawBits(void) const;
     void    setRawBits(int const raw);
+    float   toFloat(void) const;
+    int     toInt(void) const;
     private:
     int num_val_;
     static const int num_of_frac_bits = 8;
