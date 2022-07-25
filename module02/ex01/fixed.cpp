@@ -6,17 +6,23 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:12:52 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/26 00:20:28 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/26 01:11:12 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() :   num_val_(0)
 {
     std::cout << "Default constructor called" << std::endl;
-    this->num_val_ = 0;
+  
 };
+
+Fixed::Fixed(const Fixed &copy)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = copy;
+}
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
@@ -29,18 +35,6 @@ Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
 };
-
-std::ostream& operator<<(std::ostream &os, const Fixed& fix)
-{
-    os << fix.getRawBits();
-    return os;
-}
-
-Fixed::Fixed(const Fixed &copy)
-{
-    std::cout << "Copy constructor called" << std::endl;
-    *this = copy;
-}
 
 void    Fixed::setRawBits(int const num)
 {
@@ -61,16 +55,20 @@ int Fixed::toInt() const
 
 float Fixed::toFloat()
 {
-    return ((float)this->num_val_ / (float)(1 << this->num_of_frac_bits));
+    return (float)((float)this->num_val_ / (float)(1 << this->num_of_frac_bits));
 }
-Fixed::Fixed(const int num) 
+Fixed::Fixed(int num) 
 {
-    this->num_val_ = num * (1 << this->num_of_frac_bits);
+    this->num_val_ = num  << this->num_of_frac_bits;
 }
 
-Fixed::Fixed(const double num)
+Fixed::Fixed(float num)
 {
-    this->num_val_ = roundf(num * (1 << this->num_of_frac_bits));
+    this->num_val_ = 0;
+    this->num_val_ = roundf(num * 256);
+    // printf("Send help %d", num_val_);
+    printf("%f\n",this->toFloat());
+    // printf("Zium %d \n", this->num_val_);
 }
 std::ostream& operator<<(std::ostream &os, Fixed& fix)
 {
