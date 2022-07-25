@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:12:52 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/25 02:31:02 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/25 02:38:03 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ Fixed::Fixed()
 
 Fixed::Fixed(int num)
 {
-    std::cout << "Int constructor called" << std::endl
-    this->num_val = this->num_of_frac_bits * num * (1 << this->num_val);
+    std::cout << "Int constructor called" << std::endl;
+    this->num_val_ = this->num_of_frac_bits * num * (1 << this->num_of_frac_bits);
 };
 
 Fixed::Fixed(double num)
 {
-    std::cout << "Double constructor called" << std::endl
-    this->num_val = this->num_of_frac_bits * num * (1 << this->num_val);
+    std::cout << "Double constructor called" << std::endl;
+    this->num_val_ = this->num_of_frac_bits * num * (1 << this->num_of_frac_bits);
 };
 
 Fixed &Fixed::operator=(const Fixed &other)
@@ -60,5 +60,12 @@ int Fixed::getRawBits() const
     return this->num_val_;
 }
 
-float   Fixed::toFloat(void) const;
-int     Fixed::toInt(void) const;
+float   Fixed::toFloat(void) const
+{
+    return (double)this->num_val_ / (double)(1 << this->num_of_frac_bits);
+}
+
+int     Fixed::toInt(void) const
+{
+      return (int)this->num_val_ / (int)(1 << this->num_of_frac_bits);
+}
