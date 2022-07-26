@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:12:52 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/26 01:42:18 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/26 16:19:20 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,71 @@ Fixed::Fixed(float num)
     printf("%f\n",this->toFloat());
     // printf("Zium %d \n", this->num_val_);
 }
+
+Fixed &Fixed::min(Fixed &fix1, Fixed &fix2)
+{
+    if(fix1.getRawBits() > fix2.getRawBits())
+    {
+        return fix2;
+    }else{
+        return fix1;
+    }
+}
+
+const Fixed &Fixed::min(const Fixed &fix1, const Fixed &fix2)
+{
+    if(fix1.getRawBits() > fix2.getRawBits())
+    {
+        return fix2;
+    }else{
+        return fix1;
+    }
+}
+
+Fixed &Fixed::max(Fixed &fix1, Fixed &fix2)
+{
+    if(fix1.getRawBits() < fix2.getRawBits())
+    {
+        return fix2;
+    }else{
+        return fix1;
+    }
+}
+
+const Fixed &Fixed::max(const Fixed &fix1, const Fixed &fix2)
+{
+    if(fix1.getRawBits() < fix2.getRawBits())
+    {
+        return fix2;
+    }else{
+        return fix1;
+    }
+}
+
+Fixed &Fixed::operator++()
+{
+    num_val_++;
+    return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+    ++num_val_;
+    return *this;
+}
+
+Fixed &Fixed::operator--()
+{
+    num_val_--;
+    return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+    --num_val_;
+    return *this;
+}
+
 std::ostream& operator<<(std::ostream &os, const Fixed& fix)
 {
     os << fix.toFloat();
