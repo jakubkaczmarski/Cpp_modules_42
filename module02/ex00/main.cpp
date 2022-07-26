@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:12 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/25 02:24:15 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/25 23:25:17 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int main()
     Fixed const c( 42.42f );
     Fixed const d( b );
     a = Fixed( 1234.4321f );
-    std::cout << "a is " << a << std::endl;
-    std::cout << "b is " << b << std::endl;
-    std::cout << "c is " << c << std::endl;
-    std::cout << "d is " << d << std::endl;
+    // std::cout << "a is " << a << std::endl;
+    // std::cout << "b is " << b << std::endl;
+    // std::cout << "c is " << c << std::endl;
+    // std::cout << "d is " << d << std::endl;
     std::cout << "a is " << a.toInt() << " as integer" << std::endl;
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
