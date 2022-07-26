@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:12 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/26 16:43:55 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/26 16:46:04 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int main()
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	// std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
 }
