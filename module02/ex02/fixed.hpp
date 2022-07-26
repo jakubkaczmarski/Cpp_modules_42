@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:39 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/26 16:20:17 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/26 16:21:16 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Fixed
     public:
     static Fixed &min(Fixed &fix1, Fixed &fix2);
     static const Fixed & min(const Fixed &fix1, const Fixed &fix2);
-    Fixed &max(Fixed &fix1, Fixed &fix2);
-    const Fixed &max(const Fixed &fix1, const Fixed &fix2);
+    static Fixed &max(Fixed &fix1, Fixed &fix2);
+    static const Fixed &max(const Fixed &fix1, const Fixed &fix2);
     
     Fixed();
     Fixed(const int num);

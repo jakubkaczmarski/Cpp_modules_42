@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:12:52 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/26 16:19:20 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/26 16:44:48 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,7 +187,7 @@ Fixed &Fixed::max(Fixed &fix1, Fixed &fix2)
 
 const Fixed &Fixed::max(const Fixed &fix1, const Fixed &fix2)
 {
-    if(fix1.getRawBits() < fix2.getRawBits())
+    if(fix1.toFloat() < fix2.toFloat())
     {
         return fix2;
     }else{
@@ -203,8 +203,9 @@ Fixed &Fixed::operator++()
 
 Fixed Fixed::operator++(int)
 {
-    ++num_val_;
-    return *this;
+    const Fixed old = *this;
+    ++(this->num_val_);
+    return old;
 }
 
 Fixed &Fixed::operator--()
@@ -215,8 +216,9 @@ Fixed &Fixed::operator--()
 
 Fixed Fixed::operator--(int)
 {
-    --num_val_;
-    return *this;
+    const Fixed old = *this;
+    --(this->num_val_);
+    return old;
 }
 
 std::ostream& operator<<(std::ostream &os, const Fixed& fix)
