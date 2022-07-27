@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:10:29 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/27 02:20:36 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/27 02:22:52 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class FragTrap : ClapTrap
         FragTrap(std::string name);
         ~FragTrap();
         void    highFivesGuys();
+         void    attack(const std::string &  target);
     private:
         std::string name_;
         int hit_points_;

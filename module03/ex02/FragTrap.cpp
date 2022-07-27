@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:12:43 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/27 02:20:55 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/27 02:22:16 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,7 @@ FragTrap::~FragTrap()
     std::cout << "FragTrap destructor called" << std::endl;
 }
 
+void    FragTrap::highFivesGuys()
+{
+    std::cout << "Lets do a high five guys :)" << std::endl;
+}
