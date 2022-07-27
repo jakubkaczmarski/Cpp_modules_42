@@ -6,14 +6,13 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 01:39:37 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/27 01:43:29 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/27 02:08:28 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : name_(name), hit_points_(100)
-    , energy_points_(50), attack_damage_(20)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
     std::cout << "ScavTrap constructor called" << std::endl;
 }
@@ -36,5 +35,5 @@ void    ScavTrap::attack(const std::string &  target)
 
 void    ScavTrap::guardGate()
 {
-    std::cout << "Scav trao us is now in Gate keeper mode" << std::endl;
+    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }
