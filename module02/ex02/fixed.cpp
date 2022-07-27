@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:12:52 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/27 16:38:26 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/27 17:00:01 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Fixed::Fixed(const Fixed &copy)
 
 int Fixed::operator >(const Fixed &other)
 {
-    if (num_val_ < other.num_val_)
+    if (num_val_ > other.num_val_)
     {
         return 1;
     }else{
@@ -34,7 +34,7 @@ int Fixed::operator >(const Fixed &other)
 }
 int Fixed::operator <(const Fixed &other)
 {
-    if (num_val_ > other.num_val_)
+    if (num_val_ < other.num_val_)
     {
         return 1;
     }else{
@@ -43,7 +43,7 @@ int Fixed::operator <(const Fixed &other)
 }
 int Fixed::operator <=(const Fixed &other)
 {
-    if (num_val_ >= other.num_val_)
+    if (num_val_ <= other.num_val_)
     {
         return 1;
     }else{
@@ -81,25 +81,34 @@ int Fixed::operator != (const Fixed &other)
 
 Fixed Fixed::operator +(const Fixed &other)
 {
-    Fixed res(this->toFloat() + other.toFloat());
+    Fixed res(*this);
+    res.setRawBits((this->getRawBits() + other.getRawBits()));
     return res;
 }
 
 Fixed Fixed::operator -(const Fixed &other)
 {
-    Fixed res(this->toFloat() - other.toFloat());
+    Fixed res(*this);
+    res.setRawBits((this->getRawBits() - other.getRawBits()));
     return res;
 }
 
 Fixed Fixed::operator *(const Fixed &other)
 {
-    Fixed res(this->toFloat() * other.toFloat());
+    Fixed res = Fixed(*this);
+     res.setRawBits(this->getRawBits() *  other.getRawBits() / (1 << this->num_of_frac_bits));
     return res;
 }
 
 Fixed Fixed::operator /(const Fixed &other)
 {
-    Fixed res(this->toFloat() / other.toFloat());
+    Fixed res = Fixed(*this);
+    if(other.getRawBits() != 0)
+    {
+        res.setRawBits(this->getRawBits() * (1 << this->num_of_frac_bits) / other.getRawBits());
+    }else{
+        std::cout << "Division by 0" << std::endl;
+    }
     return res;
 }
 
@@ -151,7 +160,7 @@ Fixed::Fixed(float num)
 
 Fixed &Fixed::min(Fixed &fix1, Fixed &fix2)
 {
-    if(fix1.getRawBits() < fix2.getRawBits())
+    if(fix1.getRawBits() <= fix2.getRawBits())
     {
         return fix2;
     }else{
@@ -161,7 +170,7 @@ Fixed &Fixed::min(Fixed &fix1, Fixed &fix2)
 
 const Fixed &Fixed::min(const Fixed &fix1, const Fixed &fix2)
 {
-    if(fix1.getRawBits() < fix2.getRawBits())
+    if(fix1.getRawBits() <= fix2.getRawBits())
     {
         return fix2;
     }else{
@@ -171,7 +180,7 @@ const Fixed &Fixed::min(const Fixed &fix1, const Fixed &fix2)
 
 Fixed &Fixed::max(Fixed &fix1, Fixed &fix2)
 {
-    if(fix1.getRawBits() > fix2.getRawBits())
+    if(fix1.getRawBits() >= fix2.getRawBits())
     {
         return fix2;
     }else{
@@ -181,7 +190,7 @@ Fixed &Fixed::max(Fixed &fix1, Fixed &fix2)
 
 const Fixed &Fixed::max(const Fixed &fix1, const Fixed &fix2)
 {
-    if(fix1.toFloat() > fix2.toFloat())
+    if(fix1.toFloat() >= fix2.toFloat())
     {
         return fix1;
     }else{
