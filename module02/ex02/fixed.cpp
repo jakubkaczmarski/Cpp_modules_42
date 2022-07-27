@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:12:52 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/27 01:14:51 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:38:26 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed() :   num_val_(0)
 {
@@ -106,7 +106,7 @@ Fixed Fixed::operator /(const Fixed &other)
 Fixed &Fixed::operator=(const Fixed &other)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    this->num_val_ = other.num_val_;
+    this->num_val_ = other.getRawBits();
     return *this;
 }
 
@@ -134,43 +134,22 @@ int Fixed::toInt() const
 
 float Fixed::toFloat() const
 {
-    return (float)((float)this->num_val_ / (float)(1 << this->num_of_frac_bits));
+    return (float)(this->num_val_ / (float)(1 << this->num_of_frac_bits));
 }
 Fixed::Fixed(int num) 
 {
+    std::cout << "Int constructor called" << std::endl;
     this->num_val_ = num  << this->num_of_frac_bits;
 }
 
 Fixed::Fixed(float num)
 {
+    std::cout << "Float constructor called" << std::endl;
     this->num_val_ = 0;
     this->num_val_ = roundf(num * 256);
-    // printf("Send help %d", num_val_);
-    printf("%f\n",this->toFloat());
-    // printf("Zium %d \n", this->num_val_);
 }
 
 Fixed &Fixed::min(Fixed &fix1, Fixed &fix2)
-{
-    if(fix1.getRawBits() > fix2.getRawBits())
-    {
-        return fix2;
-    }else{
-        return fix1;
-    }
-}
-
-const Fixed &Fixed::min(const Fixed &fix1, const Fixed &fix2)
-{
-    if(fix1.getRawBits() > fix2.getRawBits())
-    {
-        return fix2;
-    }else{
-        return fix1;
-    }
-}
-
-Fixed &Fixed::max(Fixed &fix1, Fixed &fix2)
 {
     if(fix1.getRawBits() < fix2.getRawBits())
     {
@@ -180,9 +159,29 @@ Fixed &Fixed::max(Fixed &fix1, Fixed &fix2)
     }
 }
 
+const Fixed &Fixed::min(const Fixed &fix1, const Fixed &fix2)
+{
+    if(fix1.getRawBits() < fix2.getRawBits())
+    {
+        return fix2;
+    }else{
+        return fix1;
+    }
+}
+
+Fixed &Fixed::max(Fixed &fix1, Fixed &fix2)
+{
+    if(fix1.getRawBits() > fix2.getRawBits())
+    {
+        return fix2;
+    }else{
+        return fix1;
+    }
+}
+
 const Fixed &Fixed::max(const Fixed &fix1, const Fixed &fix2)
 {
-    if(fix1.toFloat() < fix2.toFloat())
+    if(fix1.toFloat() > fix2.toFloat())
     {
         return fix1;
     }else{
