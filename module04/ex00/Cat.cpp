@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:41:35 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/28 00:12:54 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/28 00:17:05 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,18 @@
 Cat::Cat()
 {
     this->type = "Cat";
+}
+
+Cat::Cat(const Cat &cp)
+{
+    std::cout << "Animal copy_constructor called" << std::endl;
+    *this = cp;
+}
+
+Cat& Cat::operator=(const Cat&animal)
+{
+    this->type = animal.getType();
+    return *(this);
 }
 
 

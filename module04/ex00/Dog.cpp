@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:44:59 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/27 23:58:42 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/28 00:17:31 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@ Dog::Dog()
     this->type = "Dog";
     std::cout << "Dog constructor called" << std::endl;
 }
+
+Dog::Dog(const Dog &cp)
+{
+    std::cout << "Animal copy_constructor called" << std::endl;
+    *this = cp;
+}
+
+Dog& Dog::operator=(const Dog&animal)
+{
+    this->type = animal.getType();
+    return *(this);
+}
+
 Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
