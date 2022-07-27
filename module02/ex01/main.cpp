@@ -6,11 +6,11 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:10:12 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/26 01:24:16 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:31:58 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Fixed.hpp"
 #include <iostream>
 int main()
 {

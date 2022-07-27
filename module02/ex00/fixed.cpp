@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:12:52 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/25 03:11:25 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/27 16:26:45 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() :   num_val_(0)
 {
     std::cout << "Default constructor called" << std::endl;
-    this->num_val_ = 0;
+  
 };
 
-Fixed::Fixed(int num)
+Fixed::Fixed(const int num) 
 {
     std::cout << "Int constructor called" << std::endl;
-    this->num_val_ = this->num_of_frac_bits * num * (1 << this->num_of_frac_bits);
-};
+    this->num_val_ = num  << this->num_of_frac_bits;
+}
 
-Fixed::Fixed(double num)
+Fixed::Fixed(const float num)
 {
-    std::cout << "Double constructor called" << std::endl;
-    this->num_val_ = this->num_of_frac_bits * num * (1 << this->num_of_frac_bits);
-};
+    std::cout << "Float constructor called" << std::endl;
+    this->num_val_ = 0;
+    this->num_val_ = roundf(num * 256);
+}
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
@@ -60,12 +61,12 @@ int Fixed::getRawBits() const
     return this->num_val_;
 }
 
-float   Fixed::toFloat(void) const
+float Fixed::toFloat() const
 {
-    return (double)this->num_val_ / (double)(1 << this->num_of_frac_bits);
+    return (float)((float)this->num_val_ / (float)(1 << this->num_of_frac_bits));
 }
 
-int     Fixed::toInt(void) const
+int Fixed::toInt() const
 {
-      return (int)this->num_val_ / (int)(1 << this->num_of_frac_bits);
+    return ((int)this->num_val_ >> this->num_of_frac_bits);
 }

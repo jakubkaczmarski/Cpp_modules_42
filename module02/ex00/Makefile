@@ -6,11 +6,11 @@
 #    By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:22:54 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/27 01:18:48 by jkaczmar         ###   ########.fr        #
+#    Updated: 2022/07/27 16:20:34 by jkaczmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= c_po
+NAME	= program
 CC		= g++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
