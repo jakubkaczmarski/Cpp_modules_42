@@ -6,14 +6,14 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 01:39:37 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/27 02:16:00 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/27 02:20:17 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
-, energy_points_(100), hit_points_(50), attack_damage_(20)
+,hit_points_(50), energy_points_(100), attack_damage_(20)
 {
     std::cout << "ScavTrap constructor called" << std::endl;
 }
