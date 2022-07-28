@@ -6,7 +6,14 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 01:14:39 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/28 01:15:04 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/28 02:19:43 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
+
+
+int main()
+{
+    
+}
