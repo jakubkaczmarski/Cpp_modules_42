@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 02:11:01 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/30 01:37:12 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/30 01:39:07 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
     std::cout << "Bureaucrat parameter constructor run" << std::endl;
     if(grade < 1)
     {
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooHighException();
     }else if(grade > 150)
     {
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
     }else{
         this->grade = grade;
     }
@@ -59,7 +59,7 @@ Bureaucrat &Bureaucrat::operator++()
 {
     if(this->grade - 1 < 1)
     {
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooHighException();
         return *this;
     }
     grade--;
@@ -71,7 +71,7 @@ Bureaucrat Bureaucrat::operator++(int)
     const Bureaucrat old = *this;
     if(this->grade - 1 < 1)
     {
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooHighException();
         return old;
     }
     --(this->grade);
@@ -82,7 +82,7 @@ Bureaucrat &Bureaucrat::operator--()
 {
     if(this->grade + 1 > 150)
     {
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
         return *this;
     }
     grade++;
@@ -95,7 +95,7 @@ Bureaucrat Bureaucrat::operator--(int)
     // old = *this;
     if(this->grade + 1 > 150)
     {
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
         return old;
     }
     ++(this->grade);
