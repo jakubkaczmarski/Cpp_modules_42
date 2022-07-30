@@ -6,7 +6,7 @@
 #    By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:22:54 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/30 01:40:15 by jkaczmar         ###   ########.fr        #
+#    Updated: 2022/07/30 02:40:21 by jkaczmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= program
 CC		= g++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRCS	= 	main.cpp Bureaucrat.cpp Form.cpp
+SRCS	= 	main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJS := $(SRCS:.c=.o)
 
