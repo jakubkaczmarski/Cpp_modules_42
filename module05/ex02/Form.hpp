@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:40:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/30 02:17:44 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/30 03:08:03 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form
         Form(std::string name, int grade_sign, int grade_exce);
         Form(const Form& cp);
         Form &operator=(const Form&cp);
-        ~Form();
+        virtual ~Form();
         std::string getName();
         int   get_grade_to_sign();
         int   get_grade_to_exec();

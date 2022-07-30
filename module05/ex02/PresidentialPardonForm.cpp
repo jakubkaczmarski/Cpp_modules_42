@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 02:45:45 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/30 02:54:30 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/30 03:06:04 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &cp)
     *this = cp;
 }
 
- PresidentialPardonForm::~PresidentialPardonForm()
+PresidentialPardonForm::~PresidentialPardonForm()
  {
      std::cout << "PresidentialPardon deconstructor ran" <<std::endl;
  }
