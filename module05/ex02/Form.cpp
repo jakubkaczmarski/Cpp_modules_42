@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:51:12 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 16:55:18 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:58:16 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,11 @@ const char * Form::GradeTooHighException::what(void) const throw()
 const char * Form::GradeTooLowException::what(void) const throw()
 {
     return  ("Grade too low :O");
+}
+
+const char * Form::GradeTooExecToLowException::what(void) const throw()
+{
+    return  ("Grade to exec to low :O");
 }
 
 void    Form::beSigned(Bureaucrat &b)

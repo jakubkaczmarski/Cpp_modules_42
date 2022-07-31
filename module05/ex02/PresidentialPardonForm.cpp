@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 02:45:45 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 16:57:36 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:58:21 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
             throw GradeTooLowException();
         }else if(this->get_grade_to_exec() > executor.getGrade())
         {
-            throw GradeTooLowException();   
+            throw GradeTooExecToLowException();   
         }
     }catch(const std::exception &e)
     {
