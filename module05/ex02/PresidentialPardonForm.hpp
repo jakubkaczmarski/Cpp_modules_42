@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 02:36:43 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/30 03:06:58 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:52:51 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class PresidentialPardonForm : public Form
         PresidentialPardonForm(std::string target_);
         PresidentialPardonForm(PresidentialPardonForm &cp);
         ~PresidentialPardonForm();
-    private:
-        std::string w_target_;
+        void execute(Bureaucrat const & executor) const;
 };
 
 #endif

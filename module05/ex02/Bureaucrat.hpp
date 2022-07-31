@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 01:15:06 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/30 01:36:57 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:51:08 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include <stdexcept>
+#include "Form.hpp"
+
+class Form;
+
 class Bureaucrat
 {
     public:
     Bureaucrat();
     Bureaucrat(const Bureaucrat& cp);
     Bureaucrat(const std::string name, int grade);
+    void    executeForm(Form const & form);
     std::string    getName() const;
     int                 getGrade() const;
     Bureaucrat &operator=(const Bureaucrat&cp);

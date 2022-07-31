@@ -6,12 +6,16 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 02:11:01 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/30 01:40:02 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:52:18 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+void   Bureaucrat::executeForm(Form const & form)
+{
+    form.execute(*this);
+}
 Bureaucrat::Bureaucrat() : name("Def_name"), grade(12)
 {
     std::cout << "Bureaucrat default constructor ran" << std::endl;
@@ -77,6 +81,10 @@ Bureaucrat Bureaucrat::operator++(int)
     --(this->grade);
     return old;
 }
+
+// void    Bureaucrat::executeForm(Form const & form)
+// {
+// }
 
 Bureaucrat &Bureaucrat::operator--()
 {

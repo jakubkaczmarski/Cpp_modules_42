@@ -6,20 +6,24 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:51:12 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/30 02:30:50 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:55:18 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
+Form::~Form()
+{
+    std::cout << "Form destructor called" << std::endl;
+}
 Form::Form() : name_("Def_name"), signed_(false),
-    grade_to_sign_(5) ,grade_to_exec_(5)
+    grade_to_sign_(5) ,grade_to_exec_(5), target_("Def_targ")
 {
     std::cout << "Form default constructor ran" << std::endl;
 }
 
-Form::Form(std::string name, int grade_exec, int grade_sign)
-    : name_(name),signed_(false), grade_to_sign_(grade_sign),  grade_to_exec_(grade_exec)
+Form::Form(std::string name, int grade_exec, int grade_sign, std::string target)
+    : name_(name),signed_(false), grade_to_sign_(grade_sign),  grade_to_exec_(grade_exec), target_(target)
 {
     std::cout << "Paramatirized Form constructor ran" << std::endl;
     if(grade_to_exec_ < 1 || grade_to_sign_ < 1)
@@ -34,7 +38,8 @@ Form::Form(std::string name, int grade_exec, int grade_sign)
 Form::Form(const Form &cp) :
 name_(cp.name_), signed_(cp.signed_), 
 grade_to_sign_(cp.grade_to_sign_), 
-grade_to_exec_(cp.grade_to_exec_)
+grade_to_exec_(cp.grade_to_exec_),
+target_(cp.target_)
 {
     std::cout << "Form copy_constructor called" << std::endl;
     *this = cp;
@@ -46,22 +51,27 @@ Form& Form::operator=(const Form&cp)
     return *(this);
 }
 
-int Form::get_grade_to_sign()
+int Form::get_grade_to_sign() const
 {
     return this->grade_to_sign_;
 }
 
-int Form::get_grade_to_exec()
+int Form::get_grade_to_exec() const
 {
     return this->grade_to_exec_;
 }
 
-std::string Form::getName()
+std::string Form::getName() const
 {
     return this->name_;
 }
 
-bool    Form::get_if_signed()
+std::string Form::get_target() const
+{
+    return this->name_;
+}
+
+bool    Form::get_if_signed() const
 {
     return this->signed_;
 }
