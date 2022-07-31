@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:40:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 18:49:34 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:59:00 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Form
         std::string     get_target() const ;
         virtual void execute(Bureaucrat const & executor) const = 0;
         bool           get_if_signed() const;
-        void            beSigned(Bureaucrat &b) ;
+        void            beSigned(Bureaucrat &b);
         class GradeTooHighException : public std::exception
         {
             public:

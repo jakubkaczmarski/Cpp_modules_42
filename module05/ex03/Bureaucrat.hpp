@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 01:15:06 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 18:48:54 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/31 16:51:08 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Bureaucrat
     Bureaucrat(const Bureaucrat& cp);
     Bureaucrat(const std::string name, int grade);
     void    executeForm(Form const & form);
-    void    signForm(Form & form);
     std::string    getName() const;
     int                 getGrade() const;
     Bureaucrat &operator=(const Bureaucrat&cp);
