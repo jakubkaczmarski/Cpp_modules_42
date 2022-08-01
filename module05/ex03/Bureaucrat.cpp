@@ -6,12 +6,23 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 02:11:01 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 16:52:18 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/07/31 18:48:36 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+
+void   Bureaucrat::signForm(Form & form)
+{
+    try{
+        form.beSigned(*this);
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+    }catch(std::exception &e)
+    {
+        std::cout << this->getName() << " can't sign " << form.getName() << std::endl;
+    }
+}
 void   Bureaucrat::executeForm(Form const & form)
 {
     form.execute(*this);
