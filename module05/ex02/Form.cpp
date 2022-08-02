@@ -6,22 +6,21 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:51:12 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 18:49:15 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:31:54 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::~Form()
-{
-    std::cout << "Form destructor called" << std::endl;
-}
 Form::Form() : name_("Def_name"), signed_(false),
     grade_to_sign_(5) ,grade_to_exec_(5), target_("Def_targ")
 {
     std::cout << "Form default constructor ran" << std::endl;
 }
-
+Form::~Form()
+{
+    std::cout << "Destructor of form ran" << std::endl;
+}
 Form::Form(std::string name, int grade_exec, int grade_sign, std::string target)
     : name_(name),signed_(false), grade_to_sign_(grade_sign),  grade_to_exec_(grade_exec), target_(target)
 {

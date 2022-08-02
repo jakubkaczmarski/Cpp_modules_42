@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 01:14:39 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 18:39:59 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:34:18 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,15 @@ int main()
 	}
 
 	{
-		Bureaucrat guillaume("Guillaume", 1);
-		PresidentialPardonForm form("Jan");
+		Bureaucrat guillaume("Guillaume", 120);
+		PresidentialPardonForm form("Comunity Service");
 		guillaume.signForm(form);
 		guillaume.executeForm(form);
 	}
-
 	{
 		Bureaucrat guillaume("Guillaume", 1);
-		ShrubberyCreationForm form("Backyard");
+		ShrubberyCreationForm form("Gardern");
 		guillaume.signForm(form);
-		guillaume.executeForm(form);
-	}
-
-	{
-		Bureaucrat guillaume("Guillaume", 1);
-		ShrubberyCreationForm form("Backyard");
-		guillaume.executeForm(form);
-	}
-
-	{
-		Bureaucrat guillaume("Guillaume", 150);
-		Bureaucrat jan("Jan", 1);
-		ShrubberyCreationForm form("Backyard");
-		jan.signForm(form);
 		guillaume.executeForm(form);
 	}
 }
