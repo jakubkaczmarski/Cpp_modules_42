@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:51:12 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/30 02:30:50 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:28:51 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,10 @@ bool    Form::get_if_signed()
 {
     return this->signed_;
 }
-
+Form::~Form()
+{
+    std::cout << "Destructor of form ran" << std::endl;
+}
 const char * Form::GradeTooHighException::what(void) const throw()
 {
     return ("Grade is too high :O ");
