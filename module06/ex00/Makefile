@@ -6,7 +6,7 @@
 #    By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:22:54 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/08/02 01:26:09 by jkaczmar         ###   ########.fr        #
+#    Updated: 2022/08/02 17:44:33 by jkaczmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= program
 CC		= g++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRCS	= 	main.cpp
+SRCS	= 	main.cpp Convert.cpp
 
 OBJS := $(SRCS:.c=.o)
 

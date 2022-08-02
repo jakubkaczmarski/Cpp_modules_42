@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 00:55:38 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/02 17:43:44 by jkaczmar         ###   ########.fr       */
+/*   Created: 2022/08/02 17:36:46 by jkaczmar          #+#    #+#             */
+/*   Updated: 2022/08/02 17:45:24 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONVERT_HPP
+#define CONVERT_HPP
 #include <iostream>
-#include <cstdlib>
-#include "Convert.hpp"
-
-int main(int argc, char **argv)
+#include <string>
+class Convert
 {
-    if(argc != 2)
-    {
-        std::cout << "Wrong number of arguments passed" << std::endl;
-        return (0);
-    }
-    Convert d(argv[2]);
-    d.display_char();
-    // std::cout << "int: " << int(thingy) << std::endl;
-    // std::cout << "double: " << double(thingy) << std::endl;
-}
+    public:
+        Convert();
+        Convert(std::string val);
+        // void    display_int();
+        // void    display_double();
+        // void    display_float();
+        void    display_char();
+    private:
+        std::string val_;
+};
+
+#endif
