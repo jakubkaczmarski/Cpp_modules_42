@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:40:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/30 02:17:44 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:16:54 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form
 {
     public:
