@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:00:15 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 17:06:19 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 17:20:39 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
     try{
          if(this->get_if_signed() == false)
         {
-            throw GradeTooLowException();
-        }else if(this->get_grade_to_exec() > executor.getGrade())
+            throw FormNotSignedExcept();
+        }else if(this->get_grade_to_exec() <= executor.getGrade())
         {
             throw GradeTooExecToLowException();   
         }

@@ -6,12 +6,25 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 18:52:51 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/01 21:04:47 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 17:08:24 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
+Intern::Intern()
+{
+    std::cout << "Intern created" << std::endl;
+}
+Intern::~Intern()
+{
+    std::cout << "Intern destructor ran" << std::endl;
+}
+Intern::Intern(const Intern& cp)
+{
+    std::cout << "Intern copy_constructor called" << std::endl;
+    *this = cp;
+}
 
 const char *Intern::InternExc::what(void) const throw()
 {

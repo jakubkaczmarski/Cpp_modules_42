@@ -6,12 +6,11 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 01:14:39 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/02 16:30:16 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:30:44 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-// #include "Form.hpp"
 
 int main()
 {
@@ -27,5 +26,4 @@ int main()
     Form f2("Another Important form", 120, 40);
 
     b2.signForm(f2);
-    // std::cout << f << std::endl;
 }

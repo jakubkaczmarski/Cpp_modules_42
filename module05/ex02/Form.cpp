@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:51:12 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/02 16:31:54 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 17:20:52 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,21 @@ bool    Form::get_if_signed() const
 
 const char * Form::GradeTooHighException::what(void) const throw()
 {
-    return ("Grade is too high :O ");
+    return (" Grade is too high :O ");
 } 
 const char * Form::GradeTooLowException::what(void) const throw()
 {
-    return  ("Grade too low :O");
+    return  (" Grade too low :O");
 }
 
 const char * Form::GradeTooExecToLowException::what(void) const throw()
 {
-    return  ("Grade to exec to low :O");
+    return  (" Grade to exec to low :O");
+}
+
+const char * Form::FormNotSignedExcept::what(void) const throw()
+{
+    return  (" Form not signed");
 }
 
 void    Form::beSigned(Bureaucrat &b)

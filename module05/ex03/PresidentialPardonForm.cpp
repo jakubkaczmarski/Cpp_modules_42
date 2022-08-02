@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 02:45:45 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 16:58:21 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 17:17:10 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
     try{
          if(this->get_if_signed() == false)
         {
-            throw GradeTooLowException();
-        }else if(this->get_grade_to_exec() > executor.getGrade())
+            throw FormNotSignedExcept();
+        }else if(this->get_grade_to_exec() <=  executor.getGrade())
         {
             throw GradeTooExecToLowException();   
         }
     }catch(const std::exception &e)
     {
-        std::cout << executor.getName() << "cant execute form" << e.what() << std::endl;
+        std::cout << executor.getName() << " cant execute form" << e.what() << std::endl;
         return ;
     }
    

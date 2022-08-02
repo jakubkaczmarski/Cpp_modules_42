@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 18:51:01 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/01 20:58:16 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 17:08:38 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 class Intern
 {
     public:
+        Intern();
+        ~Intern();
+        Intern(const Intern& cp);
         Form*   makeForm(std::string name, std::string target);
-
+        
         class InternExc : public std::exception
         {
             const char *what(void) const throw();

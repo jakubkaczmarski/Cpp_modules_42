@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:40:22 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/07/31 18:49:34 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/02 17:18:29 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ class Form
         class GradeTooExecToLowException : public std::exception
         {
             public:
+                const char* what(void) const throw();
+        };
+        class FormNotSignedExcept : public std::exception
+        {
+             public:
                 const char* what(void) const throw();
         };
     private:
