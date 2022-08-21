@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:36:50 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/21 15:03:32 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/21 15:14:26 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,18 @@ void    Convert::display_all(std::string c,std::string i, std::string d, std::st
     std::cout << "float: " << d << std::endl;
     std::cout << "double: " << f << std::endl;
 }
-
+void    Convert::display_all(char c, int i, double d, float f)
+{
+    if(isprint(c))
+    {
+        std::cout << "char: " << c << std::endl;
+    }else{
+        std::cout << "char: " << "non displayable" << std::endl;
+    }
+    std::cout << "int: " << i << std::endl;
+    std::cout << "float: " << d << std::endl;
+    std::cout << "double: " << f << std::endl;
+}
 int Convert::edge_check()
 {
     if(val_ == "nanf" || val_ == "nan")
@@ -53,6 +64,15 @@ int Convert::checkInput()
 {
     if(this->edge_check() == 1)
         return 0;
+    if(this->val_.length() == 1)
+    {
+        c_ = static_cast<char>(this->val_[0]);
+        i_ = static_cast<int>(this->val_[0]);
+        f_ = static_cast<float>(this->val_[0]);
+        d_ = static_cast<double>(this->val_[0]);
+        this->display_all(c_,i_, f_, d_);
+        return 0;
+    }
     return 0;
 }
 
