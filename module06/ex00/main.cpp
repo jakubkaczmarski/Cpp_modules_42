@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 00:55:38 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/21 14:36:55 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/21 15:22:30 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ int main(int argc, char **argv)
     //Then you check if it only consists of numbers or if it's one single character if not you can't really convert
     //If it consists only of numbers or one single character
     //You convert it to all the different types accross the board using static cast and display it
-    int s;
-    // char c = 'a';
-    s = static_cast<int>(argv[0][0]);
-    std::cout << "Hereee "<< s << std::endl; 
+    // int s;
+    std::string c = "42.01";
+    std::cout << atof(c.c_str()) << std::endl;
+    // 
+    // s = atoi(c);
+    // s = static_cast<int>(c);
+    // std::cout << "Hereee "<< s << std::endl; 
 }

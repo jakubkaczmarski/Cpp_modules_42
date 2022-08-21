@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:36:50 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/21 15:14:26 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/21 15:21:38 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int Convert::checkInput()
         this->display_all(c_,i_, f_, d_);
         return 0;
     }
+    
     return 0;
 }
 
