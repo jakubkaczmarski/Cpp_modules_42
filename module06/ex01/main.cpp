@@ -6,16 +6,16 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 22:18:07 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/21 22:25:29 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/21 22:36:33 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-class Data
+typedef struct s_Data
 {
     
-};
+} Data;
 
 uintptr_t serialize(Data* ptr)
 {
