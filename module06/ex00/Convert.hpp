@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 17:36:46 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/21 17:32:12 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/22 18:18:51 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Convert
         void    display_all(char c, int i, double d, float f);
         void    display_all(int i, double d, float f);
         void    display_all( double d, float f);
-        // void    display_int();
-        // void    display_double();
-        // void    display_float();
         void    display_char();
+        Convert		&operator=( Convert const & cp );
+        Convert( Convert const & cp );
+        ~Convert();
     private:
         std::string val_;
         char c_;
