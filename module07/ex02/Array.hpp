@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:05:23 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 00:50:24 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/23 01:00:54 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ class Array
     Array();
     Array(unsigned int n);
     Array(Array &cp);
-    T operator[](int val);
+    T &operator[](unsigned int val);
     class Exception_thingy : public std::exception{
         public:
        const char *what();
     };
+    Array operator=(const Array<T> &arr_cp);
     int size();
     private:
     T *arr;

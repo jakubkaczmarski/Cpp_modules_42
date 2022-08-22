@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:08:31 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 00:52:38 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/23 01:00:57 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ const  char * Array<T>::Exception_thingy::what()
     return "Index out of bounds"; 
 }
 template<typename T>
-T Array<T>::operator[](int val)
+T &Array<T>::operator[](unsigned int val)
 {
     try{
         if(val > 0 && val < this->size_)
@@ -55,7 +55,22 @@ int Array<T>::size()
 }
 
 template<typename T>
-Array<T> Array<T>::operator=(const Array<T> &arr)
+Array<T> Array<T>::operator=(const Array<T> &arr_cp)
 {
-    
+    if(this->arr)
+    {
+        delete [] arr;
+        this->arr = 0;
+    }
+    this->size = arr_cp.size;
+    if(this->size > 0)
+    {
+        this->arr = new T[this->size];
+        for(int i = 0; i < this->size; i++)
+        {
+            this->arr[i] = arr_cp[i];
+
+        }
+    }
+    return *this;
 }
