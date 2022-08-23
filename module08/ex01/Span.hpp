@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:28:04 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 15:39:55 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:44:20 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,21 @@
 
 #include <iostream>
 #include <vector>
+#include <exception>
 
 class Span
 {
     public:
     Span();
-    Span(int size);
+    Span(unsigned long size);
     ~Span();
     void    addNumber(int num);
+    class Exc : public std::exception
+    {
+        const char* exc() const throw();
+    };
     private:
-    int size_;
+    unsigned long size_;
     std::vector<int> vec_;
 };
 
