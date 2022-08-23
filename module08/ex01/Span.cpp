@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:36:36 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 15:57:17 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:00:21 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Span::~Span()
     std::cout << "Span destructor called" << std::endl;
 }
 
+
 void Span::addNumber(int num)
 {
     try{
@@ -47,7 +48,24 @@ void Span::addNumber(int num)
    
 }
 
-
+void    Span::add_many_more(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+    try{
+        for(;start < end; start++)
+        {
+             if(vec_.size() <= size_)
+            {
+                vec_.push_back(*start);
+            }else{
+                throw Span::Exc();
+            }
+        }
+       
+    }catch(Span::Exc &e)
+    {
+        std::cerr << e.what() << std::endl; 
+    }
+}
 //Loop throught the thingy and then compare 
 //So we take two number each time index 0 and 1 
 //then we compare them and look for the Span 

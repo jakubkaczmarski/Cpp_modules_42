@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:28:04 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 15:56:02 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:59:05 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Span
     void    addNumber(int num);
     int     shortestSpan();
     int     longestSpan();
+    void    add_many_more(std::vector<int>::iterator start, std::vector<int>::iterator end);
     class Exc : public std::exception
     {
         const char* exc() const throw();
