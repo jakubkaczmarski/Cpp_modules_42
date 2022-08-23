@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:36:36 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 16:00:21 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:03:17 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,19 +76,25 @@ int Span::shortestSpan()
 {
     int shortest_span = 0;
     int temp;
-    if(vec_.size() == 1)
-    {
-        return (0);
-    }
-    for(unsigned long i = 1; i < vec_.size(); i++)
-    {
-        temp = vec_[i - 1] - vec_[i];
-        if(temp < 0)
-            temp *= -1;
-        if(shortest_span < temp)
+    try{
+        if(vec_.size() == 1)
         {
-            shortest_span = temp;
+            throw Span::SpanExc();
+            return (0);
         }
+        for(unsigned long i = 1; i < vec_.size(); i++)
+        {
+            temp = vec_[i - 1] - vec_[i];
+            if(temp < 0)
+                temp *= -1;
+            if(shortest_span < temp)
+            {
+                shortest_span = temp;
+            }
+        }
+    }catch(Span::SpanExc &e)
+    {
+        e.what();
     }
     return shortest_span;
 }
@@ -114,7 +120,11 @@ int Span::longestSpan()
     return longest_Span;
 }
 
-const char* Span::Exc::exc() const throw()
+const char* Span::Exc::what() const throw()
 {
     return ("Not enought space to add another number");
+}
+const char* Span::SpanExc::what() const throw()
+{
+    return ("Cannot get span");
 }
