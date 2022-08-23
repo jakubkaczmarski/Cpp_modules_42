@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:28:04 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 15:45:24 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:56:02 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Span
     public:
     Span();
     Span(unsigned long size);
+    Span(const Span &copy);
     ~Span();
     void    addNumber(int num);
     int     shortestSpan();
