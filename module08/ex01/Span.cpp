@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:36:36 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 15:44:05 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:46:33 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,18 @@ void Span::addNumber(int num)
     {
         vec_.push_back(num);
     }else{
-        
+        throw Span::Exc();
     }
 }
 
+int Span::shortestSpan()
+{
+    int shortest_span;
+    for(int i = 0; i < vec_.size(); i++)
+    {
+        
+    }
+}
 
 const char* Span::Exc::exc() const throw()
 {
