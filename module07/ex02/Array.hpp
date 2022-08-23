@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:05:23 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 01:00:54 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/24 00:15:08 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
 #include <exception>
 #include <iostream>
 
+
 template<typename T>
 class Array
 {
     public:
     Array();
     Array(unsigned int n);
-    Array(Array &cp);
+    Array(const Array<T> &cp);
     T &operator[](unsigned int val);
     class Exception_thingy : public std::exception{
         public:
@@ -35,5 +36,6 @@ class Array
     int size_;
 };
 
+#include "Array.tpp"
 
 #endif
