@@ -6,13 +6,13 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 01:08:56 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 01:10:54 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/23 14:04:28 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-template<typedef T>
+#include "easyfind.hpp"
 
-int   easyFind(T, int thingy)
+int main()
 {
     
 }
