@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 15:36:36 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 16:03:17 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/24 17:46:23 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void Span::addNumber(int num)
     try{
         if(vec_.size() <= size_)
         {
+            std::cout << num << std::endl;
             vec_.push_back(num);
         }else{
             throw Span::Exc();
@@ -77,17 +78,16 @@ int Span::shortestSpan()
     int shortest_span = 0;
     int temp;
     try{
-        if(vec_.size() == 1)
+        if(vec_.size() == 1 | vec_.size() == 0)
         {
             throw Span::SpanExc();
             return (0);
         }
+        shortest_span = std::abs(vec_[0] - vec_[1]);
         for(unsigned long i = 1; i < vec_.size(); i++)
         {
-            temp = vec_[i - 1] - vec_[i];
-            if(temp < 0)
-                temp *= -1;
-            if(shortest_span < temp)
+            temp = std::abs(vec_[i - 1] - vec_[i]);
+            if(shortest_span > temp)
             {
                 shortest_span = temp;
             }
@@ -103,16 +103,15 @@ int Span::longestSpan()
 {
     int longest_Span = 0;
     int temp;
-    if(vec_.size() == 1)
+    if(vec_.size() == 1 | vec_.size() == 0)
     {
         return (0);
     }
+    longest_Span = std::abs(vec_[0] - vec_[1]);;
     for(unsigned long i = 1; i < vec_.size(); i++)
     {
-        temp = vec_[i - 1] - vec_[i];
-        if(temp < 0)
-            temp *= -1;
-        if(longest_Span > temp)
+        temp = std::abs(vec_[i - 1] - vec_[i]);
+        if(longest_Span < temp)
         {
             longest_Span = temp;
         }
