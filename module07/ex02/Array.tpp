@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:08:31 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/24 00:18:46 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/24 13:37:04 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,23 @@ Array<T>::Array(const Array<T> &cp) : size_(cp.size_), arr(0)
 {
     *this = cp;
 }
+
+
+template<typename T>
+Array<T>::~Array<T>(void)
+{
+    if(this->size_ > 0)
+    {
+        delete[] this->arr;
+    }
+}
+
 template<typename T>
 const  char * Array<T>::Exception_thingy::what()
 {
     return "Index out of bounds"; 
 }
+
 template<typename T>
 T &Array<T>::operator[](unsigned int val)
 {
@@ -47,6 +59,7 @@ T &Array<T>::operator[](unsigned int val)
     }catch(Exception_thingy m)
     {
         std::cout << m.what() << std::endl;
+        return this->arr[0];
     }
     return this->arr[val];    
 }
@@ -58,22 +71,22 @@ int Array<T>::size()
 }
 
 template<typename T>
-Array<T> Array<T>::operator=(const Array<T> &arr_cp)
+Array<T> &Array<T>::operator=(const Array &arr_cp)
 {
     if(this->arr)
-    {
-        delete [] arr;
-        this->arr = 0;
-    }
-    this->size_ = arr_cp.size_;
-    if(this->size_ > 0)
-    {
-        this->arr = new T[this->size_];
-        for(int i = 0; i < this->size_; i++)
         {
-            this->arr[i] = arr_cp.arr[i];
-
+            delete [] arr;
+            this->arr = 0;
         }
-    }
-    return *this;
+        this->size_ = arr_cp.size_;
+        if(this->size_ > 0)
+        {
+            this->arr = new T[this->size_];
+            for(int i = 0; i < this->size_; i++)
+            {
+                this->arr[i] = arr_cp.arr[i];
+
+            }
+        }
+	return (*this);
 }

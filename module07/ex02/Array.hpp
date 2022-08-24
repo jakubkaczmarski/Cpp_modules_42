@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:05:23 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/24 00:15:08 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/24 13:36:01 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Array
 {
     public:
     Array();
+    ~Array();
     Array(unsigned int n);
     Array(const Array<T> &cp);
     T &operator[](unsigned int val);
@@ -29,7 +30,7 @@ class Array
         public:
        const char *what();
     };
-    Array operator=(const Array<T> &arr_cp);
+    Array &operator=(const Array<T> &arr_cp);
     int size();
     private:
     T *arr;
