@@ -3,13 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkaczmar <jkaczmar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 01:08:59 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/23 15:22:41 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/24 17:37:29 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 #include <iterator>
 #include <algorithm>
 #include <exception>
@@ -35,3 +37,5 @@ typename T::iterator   easyFind(T target, int thingy)
         return it;
     }
 }
+
+#endif
