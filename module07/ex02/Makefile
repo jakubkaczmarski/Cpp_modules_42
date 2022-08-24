@@ -5,32 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/24 00:11:33 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/08/24 00:11:45 by jkaczmar         ###   ########.fr        #
+#    Created: 2022/06/22 17:22:54 by jkaczmar          #+#    #+#              #
+#    Updated: 2022/08/24 13:59:29 by jkaczmar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:=	program
+NAME	= program
+CC		= g++
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRCS	:=	main.cpp
+SRCS	= 	main.cpp 
 
-OBJS	:=	${SRCS:.cpp=.o}
+OBJS := $(SRCS:.c=.o)
 
-CC		:=	c++
+%.o: %.c 
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-CFLAGS	:=	-Wall -Wextra -Werror -std=c++98
+all: $(NAME)
 
-all:		${NAME}
-
-${NAME}:	${OBJS}
-		${CC} ${OBJS} -o ${NAME} ${CFLAGS}
+$(NAME): ${OBJS}
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-		rm -f ${OBJS}
+	rm -f $(OBJs)
 
-fclean:		clean
-		rm -f ${NAME}
+fclean:
+	rm -f $(NAME)
 
-re:			fclean all
+re:	fclean all
 
-.PHONY:		all clean fclean re
+.PHONY: all bonus fclean re

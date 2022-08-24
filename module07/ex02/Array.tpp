@@ -6,7 +6,7 @@
 /*   By: jkaczmar <jkaczmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:08:31 by jkaczmar          #+#    #+#             */
-/*   Updated: 2022/08/24 13:37:04 by jkaczmar         ###   ########.fr       */
+/*   Updated: 2022/08/24 14:33:24 by jkaczmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@ template <typename T>
 Array<T>::Array() : arr(0), size_(0)
 {
 }
-// template<typename T>
 
 template<typename T>
-Array<T>::Array(unsigned int val) : arr(new T[val]), size_(val)
+Array<T>::Array(const unsigned int val) : arr(new T[val]), size_(val)
 {
 }
 
 template<typename T>
-Array<T>::Array(const Array<T> &cp) : size_(cp.size_), arr(0)
+Array<T>::Array(const Array<T> &cp) :arr(0), size_(cp.size_)
 {
     *this = cp;
 }
@@ -40,30 +39,33 @@ Array<T>::~Array<T>(void)
 }
 
 template<typename T>
-const  char * Array<T>::Exception_thingy::what()
+const  char * Array<T>::Exception_thingy::what() const throw()
 {
     return "Index out of bounds"; 
 }
 
 template<typename T>
-T &Array<T>::operator[](unsigned int val)
+T &Array<T>::operator[](const int val) 
 {
-    try{
-        if(val > 0 && val < this->size_)
+        if(val >= 0 && val < this->size_)
         {
             return this->arr[val];
         }else{
             throw Exception_thingy();
         
         }
-    }catch(Exception_thingy m)
-    {
-        std::cout << m.what() << std::endl;
-        return this->arr[0];
-    }
-    return this->arr[val];    
 }
-
+template<typename T>
+const T &Array<T>::operator[](int val) const
+{
+    if(val >= 0 && val < this->size_)
+    {
+        return this->arr[val];
+    }else{
+        throw Exception_thingy();
+    
+    }
+}
 template<typename T>
 int Array<T>::size()
 {
